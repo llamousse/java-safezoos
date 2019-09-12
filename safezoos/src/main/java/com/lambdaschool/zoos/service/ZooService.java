@@ -1,6 +1,7 @@
 package com.lambdaschool.zoos.service;
 
 import com.lambdaschool.zoos.model.Zoo;
+import com.lambdaschool.zoos.view.JustTheCount;
 
 import java.util.ArrayList;
 

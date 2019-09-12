@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "animal")
-public class Animal
+public class Animal extends Auditable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +16,7 @@ public class Animal
 
     private String animaltype;
 
+    // an animal type may be at many zoos
     @ManyToMany(mappedBy = "animals")
     @JsonIgnoreProperties("animals")
     private List<Zoo> zoos = new ArrayList<>();

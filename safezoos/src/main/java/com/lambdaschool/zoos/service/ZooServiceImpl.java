@@ -3,10 +3,10 @@ package com.lambdaschool.zoos.service;
 import com.lambdaschool.zoos.model.Telephone;
 import com.lambdaschool.zoos.model.Zoo;
 import com.lambdaschool.zoos.repository.ZooRepository;
-import org.hibernate.bytecode.enhance.internal.bytebuddy.EnhancerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,7 +39,15 @@ public class ZooServiceImpl implements ZooService
     @Override
     public Zoo findZooByName(String name) throws EntityNotFoundException
     {
-        return null;
+        Zoo currentZoo = zoorepos.findByZooname(name);
+
+        if (currentZoo != null)
+        {
+            return currentZoo;
+        } else
+        {
+            throw new EntityNotFoundException(name);
+        }
     }
 
     @Transactional

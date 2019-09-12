@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "zoo")
-public class Zoo
+public class Zoo extends Auditable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +22,7 @@ public class Zoo
     @JsonIgnoreProperties("zoo")
     private List<Telephone> telephones = new ArrayList<>();
 
+    // a zoo may have many animal types
     @ManyToMany
     @JoinTable(name = "zooanimals",
                joinColumns = {@JoinColumn(name = "zooid")},

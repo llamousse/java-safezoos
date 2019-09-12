@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "telephone")
-public class Telephone
+public class Telephone extends Auditable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +15,7 @@ public class Telephone
     private String phonetype;
     private String phonenumber;
 
+    // many telephones to one zoo
     @ManyToOne
     @JoinColumn(name = "zooid")
     @JsonIgnoreProperties("telephones")

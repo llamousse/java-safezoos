@@ -8,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ZooRepository extends CrudRepository<Zoo, Long>
 {
+    Zoo findByZooname(String name);
+
     @Modifying
     @Query(value = "DELETE FROM zooanimals WHERE zooid = :zooid", nativeQuery = true)
     void deleteZooFromZooAnimals(long zooid);

@@ -2,11 +2,13 @@ package com.lambdaschool.zoos.service;
 
 import com.lambdaschool.zoos.model.Animal;
 import com.lambdaschool.zoos.repository.AnimalRepository;
+import com.lambdaschool.zoos.view.CountAnimals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service(value = "animalService")
 public class AnimalServiceImpl implements AnimalService
@@ -32,5 +34,11 @@ public class AnimalServiceImpl implements AnimalService
             throw new EntityNotFoundException("Animal " + type + " not found!");
         }
         return animal;
+    }
+
+    @Override
+    public List<CountAnimals> getCountAnimals()
+    {
+        return animalrepos.getCountAnimals();
     }
 }
