@@ -22,6 +22,7 @@ public class Zoo
     @JsonIgnoreProperties("zoo")
     private List<Telephone> telephones = new ArrayList<>();
 
+    // a zoo may have many animal types
     @ManyToMany
     @JoinTable(name = "zooanimals",
                joinColumns = {@JoinColumn(name = "zooid")},

@@ -16,6 +16,7 @@ public class Animal
 
     private String animaltype;
 
+    // an animal type may be at many zoos
     @ManyToMany(mappedBy = "animals")
     @JsonIgnoreProperties("animals")
     private List<Zoo> zoos = new ArrayList<>();

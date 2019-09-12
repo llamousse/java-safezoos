@@ -3,6 +3,7 @@ package com.lambdaschool.zoos.service;
 import com.lambdaschool.zoos.model.Telephone;
 import com.lambdaschool.zoos.model.Zoo;
 import com.lambdaschool.zoos.repository.ZooRepository;
+import com.lambdaschool.zoos.view.JustTheCount;
 import org.hibernate.bytecode.enhance.internal.bytebuddy.EnhancerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

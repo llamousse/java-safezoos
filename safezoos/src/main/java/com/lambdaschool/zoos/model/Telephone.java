@@ -15,6 +15,7 @@ public class Telephone
     private String phonetype;
     private String phonenumber;
 
+    // many telephones to one zoo
     @ManyToOne
     @JoinColumn(name = "zooid")
     @JsonIgnoreProperties("telephones")
