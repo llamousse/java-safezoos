@@ -3,7 +3,6 @@ package com.lambdaschool.zoos.controller;
 import com.lambdaschool.zoos.model.Animal;
 import com.lambdaschool.zoos.service.AnimalService;
 import com.lambdaschool.zoos.view.CountAnimals;
-import com.lambdaschool.zoos.view.JustTheCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +18,7 @@ import java.util.List;
 public class AnimalController
 {
     @Autowired
+
     private AnimalService animalService;
 
     @GetMapping(value = "/animals",
