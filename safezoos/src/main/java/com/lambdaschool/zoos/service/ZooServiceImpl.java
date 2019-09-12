@@ -40,7 +40,15 @@ public class ZooServiceImpl implements ZooService
     @Override
     public Zoo findZooByName(String name) throws EntityNotFoundException
     {
-        return null;
+        Zoo currentZoo = zoorepos.findByZooname(name);
+
+        if (currentZoo != null)
+        {
+            return currentZoo;
+        } else
+        {
+            throw new EntityNotFoundException(name);
+        }
     }
 
     @Transactional
